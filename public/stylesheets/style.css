@@ -1,0 +1,10 @@
+body {
+  padding: 50px;
+}
+a {
+  color: #00b7ff;
+}
+.container {
+  width: 300px;
+  margin: 100px auto;
+}
