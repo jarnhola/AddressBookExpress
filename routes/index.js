@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 });
 
 router.register = function(req,res){
-    res.render("user",{});   
+    res.render("register",{});   
 }
 
 module.exports = router;

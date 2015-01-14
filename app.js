@@ -25,7 +25,7 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/register',db.register);
+app.use('/register', routes.register); //db.register
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
