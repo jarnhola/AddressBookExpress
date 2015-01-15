@@ -4,7 +4,12 @@ body {
 a {
   color: #00b7ff;
 }
+h2 {
+  color: #ff0080;
+}
 .container {
+  padding: 20px;
   width: 300px;
   margin: 100px auto;
+  background-color: #fff;
 }
