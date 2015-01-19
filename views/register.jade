@@ -3,14 +3,13 @@ extends layout
 block content
   div(class="container")
     h2 Register new user
-    form(action="/register_user",method="post")
-      label Username
+    form(name="myform",action="/register_user",method="post")
+      label Username 
       input(type="text",name="user")
-      br
       label Password
-      input(type="password",name="pswd")
-      br
+      input(type="text",name="pswd")
       label Email
       input(type="email",name="email")
       br
       input(type="submit",value="Register")
+      p(id='error') #{error}

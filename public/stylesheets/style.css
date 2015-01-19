@@ -13,3 +13,6 @@ h2 {
   margin: 100px auto;
   background-color: #fff;
 }
+#error {
+  color: #f00;
+}

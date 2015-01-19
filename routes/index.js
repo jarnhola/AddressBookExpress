@@ -1,6 +1,7 @@
 var express = require('express');
+var db = require('../modules/dbconn');
+var queries = require('../routes/queries');
 var router = express.Router();
-db = require('../modules/dbconn');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -8,17 +9,15 @@ router.get('/', function(req, res) {
 });
 
 router.register = function(req,res){
-    res.render("register",{});   
+    res.render("register",{title:"New User", error:""});
 }
 
-router.login = function(req,res){
-    console.log(req.body);
-    if(req.body.user=="jarno"){ 
-        res.render("names",{});
-    }
-    else{
-        console.log(req.body);
-    }
+router.address = function(req,res){
+    res.render("address",{title:"New Address", error:""});
 }
 
+/*
+router.error = function(req,res){
+
+}*/
 module.exports = router;

@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session'); //jarnhola
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -6,10 +7,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var db = require('./modules/dbconn'); //jarnhola
-
+var queries = require('./routes/queries');
 var routes = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
+app.use(session({
+    secret:'kjhfg987dshk4t89oj9',
+    resave: false,
+    saveUninitialized: true
+})); //jarnhola
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,11 +31,16 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//routes and queries
 app.use('/', routes);
+app.use('/users', users);
 app.use('/register', routes.register); //db.register
-app.use('/register_user', db.addUser);
-app.use('/login', routes.login);
-app.use('/new_address', db.addAddress);
+app.use('/address', routes.address);
+app.use('/new_address', queries.addAddress);
+app.use('/register_user', queries.addUser);
+app.use('/login', queries.login);
+app.use('/getUsers', queries.getUsers);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
