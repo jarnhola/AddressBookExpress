@@ -13,11 +13,26 @@ router.register = function(req,res){
 }
 
 router.address = function(req,res){
-    res.render("address",{title:"New Address", error:""});
+    if(req.session.logged){
+        res.render("address",{title:"New Address", error:""});
+    }
+    else{
+        res.render('index',{title:'Login',error:''});
+    }
+    
 }
 
-/*
-router.error = function(req,res){
+router.showUserData = function(req,res){
+    if(req.session.logged){
+        queries.getUsers(req,res);
+    }
+    else{
+        res.render('index',{title:'Login',error:''});
+    }
+}
 
-}*/
+router.logout = function(req,res){
+    req.session.destroy();
+    res.render('index',{title:'Login',error:''});
+}
 module.exports = router;

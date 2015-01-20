@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  //a(href='/logout',id='logout') Logout
+  div(class='container')
+    div(data-role='header') #{name}
+    table(data-role='table',data-mode='reflow')
+      thead
+        tr
+          th Address
+          th Email
+          th Phone
+          th Birthday
+      tbody
+        tr
+          td #{address}
+          td #{email}
+          td #{phone}
+          td #{birthday}

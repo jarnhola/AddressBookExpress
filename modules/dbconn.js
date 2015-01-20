@@ -20,10 +20,11 @@ var user = new Schema({
 });
 
 var address = new Schema({
+    user:String,
     name:String,
     address:String,
-    email:{type:String,format:{email:true}},
-    phonenumber:String,
+    email:String,
+    phone:String,
     birthday:Date
 });
 
