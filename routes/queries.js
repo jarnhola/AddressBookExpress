@@ -10,7 +10,7 @@ exports.login = function(req,res){
             console.log(user);
             req.session.logged = true;
             req.session.username = user[0].username;
-            res.redirect("getItems");
+            res.redirect("/getItems");
         }
     });
 }
@@ -32,7 +32,7 @@ exports.addUser = function(req,res){
         temp.save(function(err){
             if(err){
                 console.log(err);
-                res.render('register',{error:'Username not allowed'});
+                res.render('register',{error:'already in use'});
             }
             else{
                 console.log("All ok");

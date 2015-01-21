@@ -19,7 +19,6 @@ router.address = function(req,res){
     else{
         res.render('index',{title:'Login',error:''});
     }
-    
 }
 
 router.showUserData = function(req,res){

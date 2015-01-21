@@ -8,10 +8,14 @@ h2 {
   color: #ff0080;
 }
 .container {
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #ff22a0;
   padding: 20px;
   width: 300px;
   margin: 100px auto;
-  background-color: #fff;
+  background-color: #fef7fa;
 }
 #error {
   color: #f00;

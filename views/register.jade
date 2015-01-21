@@ -4,7 +4,7 @@ block content
   div(class="container")
     h2 Register new user
     form(name="myform",action="/register_user",method="post")
-      label Username 
+      label Username #{error}
       input(type="text",name="user")
       label Password
       input(type="password",name="pswd")

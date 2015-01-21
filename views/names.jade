@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  div
+  div(class="container") 
     h2 #{username}'s addressbook
     input(type='text',data-type='search',id='test')
     ul(data-role='listview',data-filter='true',data-input='#test')
         each address in addressbook
           li
             a(href='/contact_info?id=#{address._id}') #{address.name}
+    br
     a(href="/address") Add new address
