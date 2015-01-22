@@ -25,7 +25,7 @@ var address = new Schema({
     address:String,
     email:String,
     phone:String,
-    birthday:Date
+    birthday:String
 });
 
 var User = mongoose.model("User", user);

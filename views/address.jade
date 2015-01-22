@@ -3,7 +3,7 @@ extends layout
 block content
   div(class="container")
     h2 Add new address info
-    form(name="myform",action="/new_address",method="post")
+    form(name="myform",action="/new_address",method="post",data-ajax='false')
       label Name
       input(type="text",name="name")
       label Address

@@ -10,7 +10,7 @@ exports.login = function(req,res){
             console.log(user);
             req.session.logged = true;
             req.session.username = user[0].username;
-            res.redirect("/getItems");
+            res.redirect('/getItems');
         }
     });
 }
@@ -23,6 +23,7 @@ exports.addUser = function(req,res){
     else{
         console.log(req.body);
 
+        // Create new User
         var temp = new db.User({
             username:req.body.user,
             password:req.body.pswd,
@@ -66,7 +67,7 @@ exports.addAddress = function(req,res){
         address:req.body.address,
         email:req.body.email,
         phone:req.body.phone,
-        birthday:new Date(req.body.birthday)
+        birthday:new String(req.body.birthday)
     });
 
     temp.save(function(err){
